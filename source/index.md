@@ -1,28 +1,83 @@
 ---
-title: API Reference
+title: dostuff Reference
 
 language_tabs:
   - shell
   - ruby
-  - python
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='http://github.com/jmcewan/dostuff'>Documentation Powered by Slate</a>
 
 includes:
   - errors
 
-search: true
+##search: true
 ---
+
+# Work in Progress
+
+Hi - this is a very rough start to the ```dostuff``` instructions
+
+@jamesmcewan 
+
+<aside class="success">
+got the documentatoin to work
+</aside>
+
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
 This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+
+
+# _dostuff_ for Users
+
+The purpose of dostuff is to allow a low effort way to deploy cloud workers by using a colleciton of scripts and text files  
+
+```shell
+$cd my_project/
+$my_project/ dostuff create
+Project ID Created and saved in '.config.yml'
+$my_project/
+```
+Once the unique project id (UUID) has been created it will be used to group the multiple scripts to ensure the data is not mixed up between "jobs".
+
+Dostuff jobs consist of a minimum of three files
+ 
+* Input Files (where the data is and how to interpret it)
+* Job Files (what you want to do with data)
+* Output Files (where you want it to go) 
+
+Multiple Input files can created and funnelled into a Job File
+
+```shell
+$my_project/ dostuff input
+How do you want connect the data? (local | s3 | sftp | ftp)
+local
+What format is the data? (CSV | TXT )
+csv
+Do the files have a prefix? (e.g. Transactions.)
+bricks
+Do the files have a suffix? (e.g. .csv)
+.csv
+How many lines at the top of the file should be skipped? (0 if none)
+0
+How many lines at the bottom of the file should be skipped? (0 if none)
+0
+
+```
+
+
+
+
+
+
+# _dostuff_ for Developers 
+
+Inspired by tools like jekyllrb and markdown that allow websites to be deployed from a few files, dostuff hopes to do the same for "cloud workers"
+
+`config.yml` contains the project UUID
 
 # Authentication
 
